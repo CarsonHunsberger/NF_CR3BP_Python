@@ -7,7 +7,7 @@ This project contains all of the data an functions necessary for transforming be
 To install, simply download this repository, extract it, and then copy the "NF_CR3BP" folder into your desired working directory.  
 The normal form functions can then be loaded in by including the following line in any of your python scripts.
 
-    `from NF_CR3BP.NF_CR3BP import *`
+    from NF_CR3BP.NF_CR3BP import *
 
 ## Capabilities
 
