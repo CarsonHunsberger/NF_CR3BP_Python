@@ -4,12 +4,10 @@ This project contains all of the data an functions necessary for transforming be
 
 ## Installation
 
-This code is designed to run "out of the box", and has been verified to work on MATLAB versions 2022b and later.
+To install, simply download this repository, extract it, and then copy the "NF_CR3BP" folder into your desired working directory.  
+The normal form functions can then be loaded in by including the following line in any of your python scripts.
 
-To install, simply download this repository and extract it to wherever you'd like.
-
-To access the NF_CR3BP functions from other folders, right click on the "NF_CR3BP_MATLAB" folder while in MATLAB and select "Add to path > Selected folders".
-
+    `from NF_CR3BP.NF_CR3BP import *`
 
 ## Capabilities
 
@@ -29,13 +27,11 @@ All normal form approximations are of degree 11.
 
 ## Getting Started
 
-Tutorial.m has been included to provide an introduction to all of the functions included in this project.  
+Tutorial.ipybn has been included to provide an introduction to all of the functions included in this project.  
 It is highly recommended to read through the comments and try running and fiddling with the examples.
 
 For a higher-level view of the functionality offered, refer to the following diagram.
 
 ![Structure of normal form code](/NFStructure.png)
-
-All of the functions have explanatory comments, meaning that typing "help \<function name\>" in MATLAB's command line will provide additional details.
 
 
