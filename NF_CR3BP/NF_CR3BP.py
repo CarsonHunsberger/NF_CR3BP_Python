@@ -6,11 +6,11 @@ N=11
 
 datastr = 'NF_CR3BP/data/'
 
-mu = 0.012154
-mustr = '012154'
+# mu = 0.012154
+# mustr = '012154'
 
-# mu = 0.01215058560962404068939157752993196481839
-# mustr = '012150585609624041'
+mu = 0.01215058560962404068939157752993196481839
+mustr = '012150585609624041'
 
 # mu = 0.0000030542
 # mustr = '0541999999999999e-06'
@@ -116,8 +116,8 @@ def AAtotilde(x,nftype):
 def tildetoAA(x,nftype):
     AA = np.zeros(6,complex)
     AA[0] = np.abs(x[0]*x[3])
-    AA[1] = 0.5*(np.pow(x[1],2)+np.pow(x[4],2))
-    AA[2] = 0.5*(np.pow(x[2],2)+np.pow(x[5],2))
+    AA[1] = 0.5*(np.power(x[1],2)+np.power(x[4],2))
+    AA[2] = 0.5*(np.power(x[2],2)+np.power(x[5],2))
     if x[3] == 0:
         AA[3] = 0
     else:
@@ -131,8 +131,8 @@ def tildetoAA(x,nftype):
     else:
         if x[3] < 0:
             AA[3] = AA[3]+(1.5j*np.pi)
-    AA[4] = np.atan2(x[4],x[1])
-    AA[5] = np.atan2(x[5],x[2])
+    AA[4] = np.arctan2(x[4],x[1])
+    AA[5] = np.arctan2(x[5],x[2])
     if nftype=='Resonant':
         AA[2] = AA[1] + AA[2]
         AA[4] = AA[4] - AA[5]
