@@ -93,16 +93,17 @@ def celleval(x,cell):
       return np.zeros(6)
 
 def AAtotilde(x,nftype):
-    tilde = np.zeros(6,dtype=complex)
+    tilde = np.zeros(6)
     if nftype=='Resonant':
+        x = x.copy()
         x[2] = x[2]-x[1]
         x[4] = x[4]+x[5]
     tilde[0] = np.sqrt(x[0].real)*np.exp(x[3].real)
-    tilde[1] = -np.sqrt(2*x[1].real)*np.cos(x[4].real)
-    tilde[2] = -np.sqrt(2*x[2].real)*np.cos(x[5].real)
+    tilde[1] = -np.sqrt(2*x[1].real)*np.sin(x[4].real)
+    tilde[2] = -np.sqrt(2*x[2].real)*np.sin(x[5].real)
     tilde[3] = np.sqrt(x[0].real)*np.exp(-x[3].real)
-    tilde[4] = -np.sqrt(2*x[1].real)*np.sin(x[4].real)
-    tilde[5] = -np.sqrt(2*x[2].real)*np.sin(x[5].real)
+    tilde[4] = -np.sqrt(2*x[1].real)*np.cos(x[4].real)
+    tilde[5] = -np.sqrt(2*x[2].real)*np.cos(x[5].real)
     # if (x[3].imag == 0):
     if (x[3].imag == 0.5*np.pi):
         tilde[0] = -tilde[0]
@@ -357,7 +358,7 @@ def RTBtoNF(RTB,Lpt=1,nftype='Birkhoff',method='anl'):
             return numtildetransform(RTBtoqp(RTB,data['Cinv'],data['T1inv'],Vinv,data['aLpt'],mu),
                                             data['GenFuncEOMs'],-1,temparr1,optsnum)
         else:
-            NF = np.zeros([numRTB,6],dtype=complex)
+            NF = np.zeros([numRTB,6])
             for n in range(numRTB):
                 NF[n,:] = numtildetransform(RTBtoqp(RTB[n,:],data['Cinv'],data['T1inv'],Vinv,data['aLpt'],mu),
                                             data['GenFuncEOMs'],-1,temparr1,optsnum)
@@ -369,7 +370,7 @@ def RTBtoNF(RTB,Lpt=1,nftype='Birkhoff',method='anl'):
         if numRTB==1:
             return sixdeval(RTBtoqp(RTB,data['Cinv'],data['T1inv'],Vinv,data['aLpt'],mu),data['anlqp0toqpN'])
         else:
-            NF = np.zeros([numRTB,6],dtype=complex)
+            NF = np.zeros([numRTB,6])
             for n in range(numRTB):
                 NF[n,:] = sixdeval(RTBtoqp(RTB[n,:],data['Cinv'],data['T1inv'],Vinv,data['aLpt'],mu),data['anlqp0toqpN'])
             if tr:
