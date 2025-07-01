@@ -99,11 +99,11 @@ def AAtotilde(x,nftype):
         x[2] = x[2]-x[1]
         x[4] = x[4]+x[5]
     tilde[0] = np.sqrt(x[0].real)*np.exp(x[3].real)
-    tilde[1] = -np.sqrt(2*x[1].real)*np.sin(x[4].real)
-    tilde[2] = -np.sqrt(2*x[2].real)*np.sin(x[5].real)
+    tilde[1] = np.sqrt(2*x[1].real)*np.cos(x[4].real)
+    tilde[2] = np.sqrt(2*x[2].real)*np.cos(x[5].real)
     tilde[3] = np.sqrt(x[0].real)*np.exp(-x[3].real)
-    tilde[4] = -np.sqrt(2*x[1].real)*np.cos(x[4].real)
-    tilde[5] = -np.sqrt(2*x[2].real)*np.cos(x[5].real)
+    tilde[4] = -np.sqrt(2*x[1].real)*np.sin(x[4].real)
+    tilde[5] = -np.sqrt(2*x[2].real)*np.sin(x[5].real)
     # if (x[3].imag == 0):
     if (x[3].imag == 0.5*np.pi):
         tilde[0] = -tilde[0]
@@ -132,8 +132,8 @@ def tildetoAA(x,nftype):
     else:
         if x[3] < 0:
             AA[3] = AA[3]+(1.5j*np.pi)
-    AA[4] = np.arctan2(x[4],x[1])
-    AA[5] = np.arctan2(x[5],x[2])
+    AA[4] = -np.arctan2(x[4],x[1])
+    AA[5] = -np.arctan2(x[5],x[2])
     if nftype=='Resonant':
         AA[2] = AA[1] + AA[2]
         AA[4] = AA[4] - AA[5]
