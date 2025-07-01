@@ -122,7 +122,7 @@ def tildetoAA(x,nftype):
     if x[3] == 0:
         AA[3] = 0
     else:
-        AA[3] = np.log(np.abs(x[0]/x[3]))
+        AA[3] = 0.5*np.log(np.abs(x[0]/x[3]))
 
     if x[0] < 0:
         if x[3] < 0:
