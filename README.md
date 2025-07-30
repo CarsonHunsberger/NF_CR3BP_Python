@@ -1,6 +1,6 @@
 # CR3BP Normal Form Code (Python)
 
-This project contains all of the data an functions necessary for transforming between Cartesian CR3BP states, normal form states, and action-angle states for both the Birkhoff and resonant normal forms, at all three collinear libration points.
+This project contains all of the data and functions necessary for transforming between Cartesian CR3BP states, normal form states, and action-angle states for both the Birkhoff and resonant normal forms, at all three collinear libration points.
 
 ## Installation
 
